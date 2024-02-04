@@ -5,10 +5,7 @@ import org.jsoup.nodes.*;
 import org.jsoup.select.*;
 
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -75,13 +72,13 @@ public class Main {
     public static void main(String[] args) throws InterruptedException {
 
         // Initialize list to store Java object of scraped data
-        List<Product> productList = new ArrayList<>();
+        List<Product> productList = Collections.synchronizedList(new ArrayList<>());
 
         // Initialize set to store unique pages found
-        Set<String> pagesDiscovered = new HashSet<>();
+        Set<String> pagesDiscovered = Collections.synchronizedSet(new HashSet<>());
 
         // Initialize queue of urls to scrape
-        List<String> pagesToScrape = new ArrayList<>();
+        List<String> pagesToScrape = Collections.synchronizedList(new ArrayList<>());
 
         // Add first page to queue
         pagesToScrape.add("https://scrapeme.live/shop/page/1/");
