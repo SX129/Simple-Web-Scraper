@@ -105,7 +105,7 @@ public class Main {
             i++;
         }
 
-        // Waiting for pending tasks to end
+        // Clean up and wait for pending tasks to end
         executorService.shutdown();
         executorService.awaitTermination(300, TimeUnit.SECONDS);
 
