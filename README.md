@@ -11,7 +11,7 @@ A very simple web scraper used to obtain data from web pages.
 
 ## Features
 
-- Scrape specific data from dynamic web pages
+- Scrape specific data from static web pages
 - Perform scraping service concurrently on different pages
 
 
